@@ -6,6 +6,7 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
+        "pre-build": "npm install",
         "build": "ng build && nodemon server.js",
         "lint": "tslint \"src/**/*.ts\"",
         "test": "ng test",
