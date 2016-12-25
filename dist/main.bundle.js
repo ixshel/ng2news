@@ -202,6 +202,7 @@ var PostsComponent = (function () {
         this.postsService = postsService;
         // initiate posts to an empty array
         this.posts = [];
+        this.wiki = 'https://en.wikipedia.org/wiki';
     }
     PostsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -308,7 +309,7 @@ module.exports = ""
 /***/ 656:
 /***/ function(module, exports) {
 
-module.exports = "*,\n*:before,\n*:after {\n    box-sizing: border-box !important;\n}\n\n.row {\n    -moz-column-width: 25em;\n    -webkit-column-width: 25em;\n    -moz-column-gap: .5em;\n    -webkit-column-gap: .5em;\n}\n\n.panel {\n    display: inline-block;\n    margin: .5em;\n    padding: 0;\n    width: 98%;\n}\n\n.all-width {\n    width: 100%;\n}\n\n.source {\n    color: white;\n    background-color: black;\n}"
+module.exports = "*,\n*:before,\n*:after {\n    box-sizing: border-box !important;\n}\n\n.row {\n    -moz-column-width: 25em;\n    -webkit-column-width: 25em;\n    -moz-column-gap: .5em;\n    -webkit-column-gap: .5em;\n}\n\n.panel {\n    display: inline-block;\n    margin: .5em;\n    padding: 0;\n    width: 98%;\n}\n\n.all-width {\n    width: 100%;\n}\n\n.source {\n    color: white;\n    background-color: black;\n}\n\n.pull-right {\n    float: right;\n}"
 
 /***/ },
 
@@ -322,7 +323,7 @@ module.exports = "<h1>\n    {{title}}\n</h1>\n<router-outlet></router-outlet>"
 /***/ 658:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <h3>The news today at <span class=\"source\">{{ posts.source }}</span> </h3>\n    <div class=\"row\">\n        <div class=\"col-xs-12 col-sm-4 col-md-12\" *ngFor=\"let post of posts.articles\">\n            <div class=\"panel card\">\n                <img class=\"card-img-top all-width\" [src]=\"post.urlToImage\" alt=\"Card image cap\">\n                <div class=\"card-block\">\n                    <h4 class=\"card-title\"> {{ post.title }} </h4>\n                    <p class=\"card-text\"> {{ post.description }} </p>\n                    <a target=\"_blank\" href=\"{{ post.url }}\" class=\"btn btn-primary\">Read more...</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"container\">\n    <h3>The news today at <span class=\"source\">{{ posts.source }}</span> </h3>\n    <div class=\"row\">\n        <div class=\"col-xs-12 col-sm-4 col-md-12\" *ngFor=\"let post of posts.articles\">\n            <div class=\"panel card\">\n                <img class=\"card-img-top all-width\" [src]=\"post.urlToImage\" alt=\"Card image cap\">\n                <div class=\"card-block\">\n                    <h4 class=\"card-title\"> {{ post.title }} </h4>\n                    <p class=\"card-text\"> {{ post.description }} </p>\n                    By_ <a target=\"_blank\" href=\"{{wiki}}/{{post.author}}\" class=\"pull-right\" href=\"#\"> {{ post.author }} </a>\n                    <a target=\"_blank\" href=\"{{ post.url }}\" class=\"btn btn-primary\">Read more...</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ },
 
